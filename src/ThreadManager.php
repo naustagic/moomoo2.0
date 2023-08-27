@@ -1,6 +1,6 @@
 <?php
 
-namespace RPurinton\template;
+namespace RPurinton\moomoo;
 
 require_once(__DIR__ . "/ConfigLoader.php");
 
@@ -13,7 +13,7 @@ class ThreadManager extends ConfigLoader
 	function __construct()
 	{
 		parent::__construct();
-		if ($this->config["template"]["StartDiscord"]) {
+		if ($this->config["moomoo"]["StartDiscord"]) {
 			$key = "DiscordClient";
 			$this->threads[$key] = new \parallel\Runtime(__DIR__ . "/DiscordClient.php");
 			$this->functions[$key] = function () {
@@ -21,7 +21,7 @@ class ThreadManager extends ConfigLoader
 			};
 			$this->futures[$key] = $this->threads[$key]->run($this->functions[$key]);
 		}
-		for ($id = 0; $id < $this->config["template"]["InboxHandlers"]; $id++) {
+		for ($id = 0; $id < $this->config["moomoo"]["InboxHandlers"]; $id++) {
 			$key = "InboxHandler$id";
 			$this->threads[$key] = new \parallel\Runtime(__DIR__ . "/InboxHandler.php");
 			$this->functions[$key] = function () {

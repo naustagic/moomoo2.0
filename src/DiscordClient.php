@@ -1,6 +1,6 @@
 <?php
 
-namespace RPurinton\template;
+namespace RPurinton\moomoo;
 
 require_once(__DIR__ . "/BunnyAsyncClient.php");
 
@@ -23,13 +23,13 @@ class DiscordClient extends ConfigLoader
 
 	private function ready()
 	{
-		$this->bunny = new BunnyAsyncClient($this->loop, "template_outbox", $this->outbox(...));
+		$this->bunny = new BunnyAsyncClient($this->loop, "moomoo_outbox", $this->outbox(...));
 		$this->discord->on("raw", $this->inbox(...));
 	}
 
 	private function inbox($message, $discord)
 	{
-		$this->bunny->publish("template_inbox", $message);
+		$this->bunny->publish("moomoo_inbox", $message);
 	}
 
 	private function outbox($message)

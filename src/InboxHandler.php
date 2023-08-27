@@ -1,6 +1,6 @@
 <?php
 
-namespace RPurinton\template;
+namespace RPurinton\moomoo;
 
 require_once(__DIR__ . "/SqlClient.php");
 require_once(__DIR__ . "/BunnyClient.php");
@@ -16,7 +16,7 @@ class InboxHandler extends ConfigLoader
 		parent::__construct();
 		$this->sql = new SqlClient();
 		$loop = \React\EventLoop\Loop::get();
-		$this->bunny = new BunnyAsyncClient($loop, "template_inbox", $this->process(...));
+		$this->bunny = new BunnyAsyncClient($loop, "moomoo_inbox", $this->process(...));
 		$loop->run();
 	}
 
@@ -54,7 +54,7 @@ class InboxHandler extends ConfigLoader
 		$reply["function"] = "MESSAGE_REPLY";
 		$reply["reply_to"] = $message["id"];
 		$reply["channel_id"] = $message["channel_id"];
-		$this->bunny->publish("template_outbox", $reply);
+		$this->bunny->publish("moomoo_outbox", $reply);
 		return true;
 	}
 }

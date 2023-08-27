@@ -1,7 +1,7 @@
 #!/usr/local/bin/php -f
 <?php
 
-namespace RPurinton\template;
+namespace RPurinton\moomoo;
 
 if (!isset($argv[1])) die("ERROR: No command specified");
 

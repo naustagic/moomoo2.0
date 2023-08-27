@@ -1,1 +1,1 @@
-template restart && tail -f logs.d/wrapper.log
+moomoo restart && tail -f logs.d/wrapper.log
