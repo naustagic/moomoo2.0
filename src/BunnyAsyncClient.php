@@ -7,7 +7,6 @@ require_once(__DIR__ . "/ConfigLoader.php");
 class BunnyAsyncClient extends ConfigLoader
 {
 	private $queue = null;
-	private $client = null;
 	private $channel = null;
 	private $callback = null;
 
@@ -22,7 +21,6 @@ class BunnyAsyncClient extends ConfigLoader
 
 	private function getChannel($client)
 	{
-		$this->client = $client;
 		return $client->channel();
 	}
 
@@ -44,8 +42,21 @@ class BunnyAsyncClient extends ConfigLoader
 		else $channel->nack($message);
 	}
 
-	public function publish($queue, $data)
+	public static function publish($queue, $data)
 	{
-		$this->channel->publish(json_encode($data, JSON_PRETTY_PRINT), [], '', $queue);
+		$json_string = json_encode($data);
+		$descriptorspec = array(
+			0 => array("pipe", "r"),
+			1 => array("pipe", "w"),
+			2 => array("pipe", "w")
+		);
+		$process = proc_open("/usr/bin/publish '$queue'", $descriptorspec, $pipes);
+		if (is_resource($process)) {
+			fwrite($pipes[0], $json_string);
+			fclose($pipes[0]);
+			fclose($pipes[1]);
+			fclose($pipes[2]);
+			proc_close($process);
+		}
 	}
 }
