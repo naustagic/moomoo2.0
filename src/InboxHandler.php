@@ -2,19 +2,18 @@
 
 namespace RPurinton\moomoo;
 
-require_once(__DIR__ . "/SqlClient.php");
-require_once(__DIR__ . "/BunnyClient.php");
+//require_once(__DIR__ . "/SqlClient.php");
 require_once(__DIR__ . "/BunnyAsyncClient.php");
 
 class InboxHandler extends ConfigLoader
 {
-	private $sql = null;
+	//private $sql = null;
 	private $bunny = null;
 
 	function __construct()
 	{
 		parent::__construct();
-		$this->sql = new SqlClient();
+		$ //this->sql = new SqlClient();
 		$loop = \React\EventLoop\Loop::get();
 		$this->bunny = new BunnyAsyncClient($loop, "moomoo_inbox", $this->process(...));
 		$loop->run();
