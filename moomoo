@@ -1,0 +1,3 @@
+#!/usr/local/bin/php -f
+<?php
+echo("Hello World!\n");
