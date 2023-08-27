@@ -29,6 +29,7 @@ class DiscordClient extends ConfigLoader
 
 	private function inbox($message, $discord)
 	{
+		$message["bot_id"] = $discord->id;
 		$this->bunny->publish("moomoo_inbox", $message);
 	}
 

@@ -9,7 +9,7 @@ class ConfigLoader
 	public $config = null;
 	function __construct()
 	{
-		exec("ls " . __DIR__ . "/conf.d/*.conf", $configfiles);
+		exec("ls " . __DIR__ . "/conf.d/*.json", $configfiles);
 		foreach ($configfiles as $configfile) {
 			$section = substr($configfile, 0, strpos($configfile, ".conf"));
 			$section = substr($section, strpos($section, "conf.d/") + 7);
