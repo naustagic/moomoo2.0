@@ -13,7 +13,7 @@ class InboxHandler extends ConfigLoader
 	function __construct()
 	{
 		parent::__construct();
-		$ //this->sql = new SqlClient();
+		//$this->sql = new SqlClient();
 		$loop = \React\EventLoop\Loop::get();
 		$this->bunny = new BunnyAsyncClient($loop, "moomoo_inbox", $this->process(...));
 		$loop->run();
