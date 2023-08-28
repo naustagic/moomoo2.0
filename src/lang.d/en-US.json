@@ -12,11 +12,11 @@
     "commands": [
         {
             "name": "register",
-            "description": "Register your MIR4 character",
+            "description": "Register or update your MIR4 Character",
             "options": [
                 {
-                    "name": "Character Name",
-                    "description": "Your exact MIR4 character name, copy paste from the game!",
+                    "name": "Exact MIR4 Character Name",
+                    "description": "It must be the exact name of your character, including spaces and special characters. you can copy and paste from the game.  It is not case sensitive. If you have multiple characters, only register your main character.",
                     "type": 3,
                     "required": true
                 }
