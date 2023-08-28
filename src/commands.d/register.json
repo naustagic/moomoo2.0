@@ -65,7 +65,7 @@
                         "zh-CN": "是",
                         "ko": "예"
                     },
-                    "value": 1
+                    "value": "yes"
                 },
                 {
                     "name": "No",
@@ -76,7 +76,7 @@
                         "zh-CN": "没有",
                         "ko": "아니"
                     },
-                    "value": 0
+                    "value": "no"
                 }
             ]
         }
