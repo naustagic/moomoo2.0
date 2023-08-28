@@ -19,9 +19,9 @@
         {
             "name": "name",
             "name_localizations": {
-                "en-US": "Name",
-                "pt-BR": "Nome",
-                "es-ES": "Nombre",
+                "en-US": "name",
+                "pt-BR": "nome",
+                "es-ES": "nombre",
                 "zh-CN": "名称",
                 "ko": "이름"
             },
