@@ -5,7 +5,7 @@
         "pt-BR": "adicionar_piloto",
         "es-ES": "agregar_piloto",
         "zh-CN": "添加飞行员",
-        "ko": "파일럿 추가"
+        "ko": "파일럿추가"
     },
     "description": "Designate a Pilot for your character",
     "description_localizations": {
