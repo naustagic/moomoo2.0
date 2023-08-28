@@ -22,6 +22,8 @@ class InboxHandler extends ConfigLoader
 	private function process($message)
 	{
 		switch ($message["t"]) {
+			case "INTERACTION_CREATE":
+				return $this->INTERACTION_CREATE($message["d"]);
 			case "MESSAGE_CREATE":
 				return $this->MESSAGE_CREATE($message["d"]);
 			case "MESSAGE_UPDATE":
@@ -29,6 +31,12 @@ class InboxHandler extends ConfigLoader
 			case "MESSAGE_DELETE":
 				return $this->MESSAGE_DELETE($message["d"]);
 		}
+		return true;
+	}
+
+	private function INTERACTION_CREATE($interaction)
+	{
+		echo ("InboxHandler::INTERACTION_CREATE\n" . print_r($interaction, true) . "\n");
 		return true;
 	}
 

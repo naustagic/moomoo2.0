@@ -40,7 +40,7 @@ class DiscordClient extends ConfigLoader
 		foreach ($this->discord->guilds as $guild) $this->register_guild($guild);
 	}
 
-	private function register_guild($guild)
+	private function register_guild(\Discord\Parts\Guild\Guild $guild)
 	{
 		$this->guild_langs[$guild->id] = isset($this->lang[$guild->preferred_locale]) ? $guild->preferred_locale : "en-US";
 		$lang = $this->lang[$this->guild_langs[$guild->id]];
@@ -51,7 +51,7 @@ class DiscordClient extends ConfigLoader
 			];
 			if (isset($command["options"])) $command_config["options"] = $command["options"];
 			$slashcommand = new Command($this->discord, $command_config);
-			$this->discord->application->commands->save($slashcommand);
+			$guild->commands->save($slashcommand);
 			$this->discord->listenCommand($command["name"], $this->interaction(...));
 		}
 	}
