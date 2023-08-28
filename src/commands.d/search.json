@@ -1,0 +1,117 @@
+{
+    "name": "search",
+    "description": "Search for a MIR4 Character, Clan, Server, or Region",
+    "name_localizations": {
+        "en-US": "search",
+        "pt-BR": "pesquisar",
+        "es-ES": "buscar",
+        "zh-CN": "搜索",
+        "ko": "검색"
+    },
+    "description_localizations": {
+        "en-US": "Search for a MIR4 Character, Clan, Server, or Region",
+        "pt-BR": "Pesquise um personagem, clã, servidor ou região MIR4",
+        "es-ES": "Busca un personaje, clan, servidor o región de MIR4",
+        "zh-CN": "搜索MIR4角色 氏族 服务器或地区",
+        "ko": "MIR4 캐릭터, 클랜, 서버 또는 지역 검색"
+    },
+    "options": [
+        {
+            "name": "query",
+            "name_localizations": {
+                "en-US": "query",
+                "pt-BR": "consulta",
+                "es-ES": "consulta",
+                "zh-CN": "查询",
+                "ko": "질문"
+            },
+            "description": "Your search query",
+            "description_localizations": {
+                "en-US": "Your search query",
+                "pt-BR": "Sua consulta de pesquisa",
+                "es-ES": "Tu consulta de búsqueda",
+                "zh-CN": "您的搜索查询",
+                "ko": "검색 쿼리"
+            },
+            "type": 3,
+            "required": true
+        },
+        {
+            "name": "type",
+            "name_localizations": {
+                "en-US": "type",
+                "pt-BR": "tipo",
+                "es-ES": "tipo",
+                "zh-CN": "类型",
+                "ko": "유형"
+            },
+            "description": "The type of search you want to perform",
+            "description_localizations": {
+                "en-US": "The type of search you want to perform",
+                "pt-BR": "O tipo de pesquisa que você deseja realizar",
+                "es-ES": "El tipo de búsqueda que deseas realizar",
+                "zh-CN": "您要执行的搜索类型",
+                "ko": "수행하려는 검색 유형"
+            },
+            "type": 3,
+            "required": false,
+            "choices": [
+                {
+                    "name": "all",
+                    "name_localizations": {
+                        "en-US": "all",
+                        "pt-BR": "todos",
+                        "es-ES": "todos",
+                        "zh-CN": "所有",
+                        "ko": "모든"
+                    },
+                    "value": "all"
+                },
+                {
+                    "name": "character",
+                    "name_localizations": {
+                        "en-US": "character",
+                        "pt-BR": "personagem",
+                        "es-ES": "personaje",
+                        "zh-CN": "字符",
+                        "ko": "캐릭터"
+                    },
+                    "value": "character"
+                },
+                {
+                    "name": "clan",
+                    "name_localizations": {
+                        "en-US": "clan",
+                        "pt-BR": "clã",
+                        "es-ES": "clan",
+                        "zh-CN": "氏族",
+                        "ko": "클랜"
+                    },
+                    "value": "clan"
+                },
+                {
+                    "name": "server",
+                    "name_localizations": {
+                        "en-US": "server",
+                        "pt-BR": "servidor",
+                        "es-ES": "servidor",
+                        "zh-CN": "服务器",
+                        "ko": "서버"
+                    },
+                    "value": "server"
+                },
+                {
+                    "name": "region",
+                    "name_localizations": {
+                        "en-US": "region",
+                        "pt-BR": "região",
+                        "es-ES": "región",
+                        "zh-CN": "地区",
+                        "ko": "지역"
+                    },
+                    "value": "region"
+                }
+            ]
+        }
+    ]
+}
