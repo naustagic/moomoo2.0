@@ -2,6 +2,13 @@
 
 namespace RPurinton\moomoo;
 
+use React\EventLoop\Loop;
+use Discord\Discord;
+use Discord\WebSockets\Intents;
+use Discord\Builders\MessageBuilder;
+use Discord\Parts\Interactions\Interaction;
+use Discord\Parts\Interactions\Command\Command;
+
 require_once(__DIR__ . "/BunnyAsyncClient.php");
 
 class DiscordClient extends ConfigLoader
@@ -24,8 +31,14 @@ class DiscordClient extends ConfigLoader
 	private function ready()
 	{
 		$this->bunny = new BunnyAsyncClient($this->loop, "moomoo_outbox", $this->outbox(...));
-		foreach ($this->discord->guilds as $guild) print_r($guild);
 		$this->discord->on("raw", $this->inbox(...));
+		foreach ($this->discord->guilds as $guild) $this->register_guild($guild);
+	}
+
+	private function register_guild($guild)
+	{
+		$guild_language = $guild->preferred_locale;
+		$lang = isset($this->lang[$guild_language]) ? $this->lang[$guild_language] : $this->lang["en-US"];
 	}
 
 	private function inbox($message, $discord)
