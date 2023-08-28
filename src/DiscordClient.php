@@ -16,7 +16,7 @@ class DiscordClient extends ConfigLoader
 
 	private $loop = null;
 	private $bunny = null;
-	private Discord $discord = null;
+	private $discord = null;
 	private $guild_langs = [];
 
 	function __construct()
