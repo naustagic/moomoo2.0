@@ -1,0 +1,720 @@
+{
+    "name": "top",
+    "description": "Get the top 10 MIR4 Characters, Clans, Servers, or Regions within a given scope",
+    "name_localizations": {
+        "en-US": "top",
+        "pt-BR": "topo",
+        "es-ES": "superior",
+        "zh-CN": "最佳",
+        "ko": "상단"
+    },
+    "description_localizations": {
+        "en-US": "Get the top 10 MIR4 Characters, Clans, Servers, or Regions within a given scope",
+        "pt-BR": "Obtenha os 10 melhores personagens, clãs, servidores ou regiões MIR4 dentro de um escopo específico",
+        "es-ES": "Obtén los 10 mejores personajes, clanes, servidores o regiones de MIR4 dentro de un ámbito determinado",
+        "zh-CN": "在给定范围内获取前10名MIR4角色，氏族，服务器或地区",
+        "ko": "지정된 범위 내에서 상위 10 개의 MIR4 캐릭터, 클랜, 서버 또는 지역을 가져옵니다."
+    },
+    "options": [
+        {
+            "name": "type",
+            "name_localizations": {
+                "en-US": "type",
+                "pt-BR": "tipo",
+                "es-ES": "tipo",
+                "zh-CN": "类型",
+                "ko": "유형"
+            },
+            "description": "The type of top you want to get",
+            "description_localizations": {
+                "en-US": "The type of top you want to get",
+                "pt-BR": "O tipo de topo que você deseja obter",
+                "es-ES": "El tipo de top que deseas obtener",
+                "zh-CN": "您要获取的顶部类型",
+                "ko": "가져 오려는 상위 유형"
+            },
+            "type": 3,
+            "required": true,
+            "choices": [
+                {
+                    "name": "character",
+                    "name_localizations": {
+                        "en-US": "character",
+                        "pt-BR": "personagem",
+                        "es-ES": "personaje",
+                        "zh-CN": "字符",
+                        "ko": "캐릭터"
+                    },
+                    "value": "character"
+                },
+                {
+                    "name": "clan",
+                    "name_localizations": {
+                        "en-US": "clan",
+                        "pt-BR": "clã",
+                        "es-ES": "clan",
+                        "zh-CN": "氏族",
+                        "ko": "클랜"
+                    },
+                    "value": "clan"
+                },
+                {
+                    "name": "server",
+                    "name_localizations": {
+                        "en-US": "server",
+                        "pt-BR": "servidor",
+                        "es-ES": "servidor",
+                        "zh-CN": "服务器",
+                        "ko": "서버"
+                    },
+                    "value": "server"
+                },
+                {
+                    "name": "region",
+                    "name_localizations": {
+                        "en-US": "region",
+                        "pt-BR": "região",
+                        "es-ES": "región",
+                        "zh-CN": "地区",
+                        "ko": "지역"
+                    },
+                    "value": "region"
+                }
+            ]
+        },
+        {
+            "name": "region",
+            "name_localizations": {
+                "en-US": "region",
+                "pt-BR": "região",
+                "es-ES": "región",
+                "zh-CN": "地区",
+                "ko": "지역"
+            },
+            "description": "The region to get the top from",
+            "description_localizations": {
+                "en-US": "The region to get the top from",
+                "pt-BR": "A região para obter o topo",
+                "es-ES": "La región para obtener el top",
+                "zh-CN": "要从中获取顶部的区域",
+                "ko": "상위 항목을 가져올 지역"
+            },
+            "type": 3,
+            "required": false,
+            "choices": [
+                {
+                    "name": "all",
+                    "name_localizations": {
+                        "en-US": "all",
+                        "pt-BR": "todos",
+                        "es-ES": "todos",
+                        "zh-CN": "所有",
+                        "ko": "모든"
+                    },
+                    "value": "all"
+                },
+                {
+                    "name": "na1",
+                    "value": "na1"
+                },
+                {
+                    "name": "na2",
+                    "value": "na2"
+                },
+                {
+                    "name": "sa1",
+                    "value": "sa1"
+                },
+                {
+                    "name": "sa2",
+                    "value": "sa2"
+                },
+                {
+                    "name": "eu1",
+                    "value": "eu1"
+                },
+                {
+                    "name": "innmena1",
+                    "value": "innmena1"
+                },
+                {
+                    "name": "asia1",
+                    "value": "asia1"
+                },
+                {
+                    "name": "asia2",
+                    "value": "asia2"
+                },
+                {
+                    "name": "asia3",
+                    "value": "asia3"
+                },
+                {
+                    "name": "asia4",
+                    "value": "asia4"
+                }
+            ]
+        },
+        {
+            "name": "server",
+            "name_localizations": {
+                "en-US": "server",
+                "pt-BR": "servidor",
+                "es-ES": "servidor",
+                "zh-CN": "服务器",
+                "ko": "서버"
+            },
+            "description": "The server to get the top from",
+            "description_localizations": {
+                "en-US": "The server to get the top from",
+                "pt-BR": "O servidor para obter o topo",
+                "es-ES": "El servidor para obtener el top",
+                "zh-CN": "要从中获取顶部的服务器",
+                "ko": "상위 항목을 가져올 서버"
+            },
+            "type": 3,
+            "required": false,
+            "choices": [
+                {
+                    "name": "all",
+                    "name_localizations": {
+                        "en-US": "all",
+                        "pt-BR": "todos",
+                        "es-ES": "todos",
+                        "zh-CN": "所有",
+                        "ko": "모든"
+                    },
+                    "value": "all"
+                },
+                {
+                    "name": "na011",
+                    "value": "na011"
+                },
+                {
+                    "name": "na012",
+                    "value": "na012"
+                },
+                {
+                    "name": "na013",
+                    "value": "na013"
+                },
+                {
+                    "name": "na014",
+                    "value": "na014"
+                },
+                {
+                    "name": "na021",
+                    "value": "na021"
+                },
+                {
+                    "name": "na022",
+                    "value": "na022"
+                },
+                {
+                    "name": "na023",
+                    "value": "na023"
+                },
+                {
+                    "name": "na031",
+                    "value": "na031"
+                },
+                {
+                    "name": "na032",
+                    "value": "na032"
+                },
+                {
+                    "name": "na033",
+                    "value": "na033"
+                },
+                {
+                    "name": "na034",
+                    "value": "na034"
+                },
+                {
+                    "name": "na042",
+                    "value": "na042"
+                },
+                {
+                    "name": "na043",
+                    "value": "na043"
+                },
+                {
+                    "name": "na044",
+                    "value": "na044"
+                },
+                {
+                    "name": "na051",
+                    "value": "na051"
+                },
+                {
+                    "name": "na052",
+                    "value": "na052"
+                },
+                {
+                    "name": "na053",
+                    "value": "na053"
+                },
+                {
+                    "name": "na054",
+                    "value": "na054"
+                },
+                {
+                    "name": "na061",
+                    "value": "na061"
+                },
+                {
+                    "name": "na062",
+                    "value": "na062"
+                },
+                {
+                    "name": "na064",
+                    "value": "na064"
+                },
+                {
+                    "name": "na071",
+                    "value": "na071"
+                },
+                {
+                    "name": "na072",
+                    "value": "na072"
+                },
+                {
+                    "name": "na073",
+                    "value": "na073"
+                },
+                {
+                    "name": "na074",
+                    "value": "na074"
+                },
+                {
+                    "name": "na081",
+                    "value": "na081"
+                },
+                {
+                    "name": "na082",
+                    "value": "na082"
+                },
+                {
+                    "name": "na083",
+                    "value": "na083"
+                },
+                {
+                    "name": "sa011",
+                    "value": "sa011"
+                },
+                {
+                    "name": "sa012",
+                    "value": "sa012"
+                },
+                {
+                    "name": "sa013",
+                    "value": "sa013"
+                },
+                {
+                    "name": "sa014",
+                    "value": "sa014"
+                },
+                {
+                    "name": "sa021",
+                    "value": "sa021"
+                },
+                {
+                    "name": "sa022",
+                    "value": "sa022"
+                },
+                {
+                    "name": "sa023",
+                    "value": "sa023"
+                },
+                {
+                    "name": "sa031",
+                    "value": "sa031"
+                },
+                {
+                    "name": "sa032",
+                    "value": "sa032"
+                },
+                {
+                    "name": "sa033",
+                    "value": "sa033"
+                },
+                {
+                    "name": "sa034",
+                    "value": "sa034"
+                },
+                {
+                    "name": "sa041",
+                    "value": "sa041"
+                },
+                {
+                    "name": "sa043",
+                    "value": "sa043"
+                },
+                {
+                    "name": "sa044",
+                    "value": "sa044"
+                },
+                {
+                    "name": "sa051",
+                    "value": "sa051"
+                },
+                {
+                    "name": "sa052",
+                    "value": "sa052"
+                },
+                {
+                    "name": "sa053",
+                    "value": "sa053"
+                },
+                {
+                    "name": "sa054",
+                    "value": "sa054"
+                },
+                {
+                    "name": "sa061",
+                    "value": "sa061"
+                },
+                {
+                    "name": "sa062",
+                    "value": "sa062"
+                },
+                {
+                    "name": "sa063",
+                    "value": "sa063"
+                },
+                {
+                    "name": "sa064",
+                    "value": "sa064"
+                },
+                {
+                    "name": "sa071",
+                    "value": "sa071"
+                },
+                {
+                    "name": "sa072",
+                    "value": "sa072"
+                },
+                {
+                    "name": "sa073",
+                    "value": "sa073"
+                },
+                {
+                    "name": "sa081",
+                    "value": "sa081"
+                },
+                {
+                    "name": "sa082",
+                    "value": "sa082"
+                },
+                {
+                    "name": "sa083",
+                    "value": "sa083"
+                },
+                {
+                    "name": "eu011",
+                    "value": "eu011"
+                },
+                {
+                    "name": "eu012",
+                    "value": "eu012"
+                },
+                {
+                    "name": "eu013",
+                    "value": "eu013"
+                },
+                {
+                    "name": "eu014",
+                    "value": "eu014"
+                },
+                {
+                    "name": "eu021",
+                    "value": "eu021"
+                },
+                {
+                    "name": "eu022",
+                    "value": "eu022"
+                },
+                {
+                    "name": "eu023",
+                    "value": "eu023"
+                },
+                {
+                    "name": "eu024",
+                    "value": "eu024"
+                },
+                {
+                    "name": "eu031",
+                    "value": "eu031"
+                },
+                {
+                    "name": "eu032",
+                    "value": "eu032"
+                },
+                {
+                    "name": "eu033",
+                    "value": "eu033"
+                },
+                {
+                    "name": "eu034",
+                    "value": "eu034"
+                },
+                {
+                    "name": "eu041",
+                    "value": "eu041"
+                },
+                {
+                    "name": "eu042",
+                    "value": "eu042"
+                },
+                {
+                    "name": "eu043",
+                    "value": "eu043"
+                },
+                {
+                    "name": "in011",
+                    "value": "in011"
+                },
+                {
+                    "name": "in012",
+                    "value": "in012"
+                },
+                {
+                    "name": "in013",
+                    "value": "in013"
+                },
+                {
+                    "name": "in014",
+                    "value": "in014"
+                },
+                {
+                    "name": "in021",
+                    "value": "in021"
+                },
+                {
+                    "name": "in022",
+                    "value": "in022"
+                },
+                {
+                    "name": "in023",
+                    "value": "in023"
+                },
+                {
+                    "name": "in024",
+                    "value": "in024"
+                },
+                {
+                    "name": "asia011",
+                    "value": "asia011"
+                },
+                {
+                    "name": "asia012",
+                    "value": "asia012"
+                },
+                {
+                    "name": "asia013",
+                    "value": "asia013"
+                },
+                {
+                    "name": "asia014",
+                    "value": "asia014"
+                },
+                {
+                    "name": "asia021",
+                    "value": "asia021"
+                },
+                {
+                    "name": "asia022",
+                    "value": "asia022"
+                },
+                {
+                    "name": "asia023",
+                    "value": "asia023"
+                },
+                {
+                    "name": "asia024",
+                    "value": "asia024"
+                },
+                {
+                    "name": "asia031",
+                    "value": "asia031"
+                },
+                {
+                    "name": "asia032",
+                    "value": "asia032"
+                },
+                {
+                    "name": "asia033",
+                    "value": "asia033"
+                },
+                {
+                    "name": "asia041",
+                    "value": "asia041"
+                },
+                {
+                    "name": "asia042",
+                    "value": "asia042"
+                },
+                {
+                    "name": "asia043",
+                    "value": "asia043"
+                },
+                {
+                    "name": "asia051",
+                    "value": "asia051"
+                },
+                {
+                    "name": "asia052",
+                    "value": "asia052"
+                },
+                {
+                    "name": "asia053",
+                    "value": "asia053"
+                },
+                {
+                    "name": "asia054",
+                    "value": "asia054"
+                },
+                {
+                    "name": "asia061",
+                    "value": "asia061"
+                },
+                {
+                    "name": "asia062",
+                    "value": "asia062"
+                },
+                {
+                    "name": "asia063",
+                    "value": "asia063"
+                },
+                {
+                    "name": "asia064",
+                    "value": "asia064"
+                },
+                {
+                    "name": "asia071",
+                    "value": "asia071"
+                },
+                {
+                    "name": "asia072",
+                    "value": "asia072"
+                },
+                {
+                    "name": "asia073",
+                    "value": "asia073"
+                },
+                {
+                    "name": "asia081",
+                    "value": "asia081"
+                },
+                {
+                    "name": "asia082",
+                    "value": "asia082"
+                },
+                {
+                    "name": "asia083",
+                    "value": "asia083"
+                },
+                {
+                    "name": "asia311",
+                    "value": "asia311"
+                },
+                {
+                    "name": "asia312",
+                    "value": "asia312"
+                },
+                {
+                    "name": "asia313",
+                    "value": "asia313"
+                },
+                {
+                    "name": "asia314",
+                    "value": "asia314"
+                },
+                {
+                    "name": "asia321",
+                    "value": "asia321"
+                },
+                {
+                    "name": "asia322",
+                    "value": "asia322"
+                },
+                {
+                    "name": "asia323",
+                    "value": "asia323"
+                },
+                {
+                    "name": "asia324",
+                    "value": "asia324"
+                },
+                {
+                    "name": "asia331",
+                    "value": "asia331"
+                },
+                {
+                    "name": "asia332",
+                    "value": "asia332"
+                },
+                {
+                    "name": "asia333",
+                    "value": "asia333"
+                },
+                {
+                    "name": "asia341",
+                    "value": "asia341"
+                },
+                {
+                    "name": "asia342",
+                    "value": "asia342"
+                },
+                {
+                    "name": "asia343",
+                    "value": "asia343"
+                },
+                {
+                    "name": "asia351",
+                    "value": "asia351"
+                },
+                {
+                    "name": "asia352",
+                    "value": "asia352"
+                },
+                {
+                    "name": "asia353",
+                    "value": "asia353"
+                },
+                {
+                    "name": "asia354",
+                    "value": "asia354"
+                },
+                {
+                    "name": "asia361",
+                    "value": "asia361"
+                },
+                {
+                    "name": "asia362",
+                    "value": "asia362"
+                },
+                {
+                    "name": "asia363",
+                    "value": "asia363"
+                },
+                {
+                    "name": "asia364",
+                    "value": "asia364"
+                },
+                {
+                    "name": "asia371",
+                    "value": "asia371"
+                },
+                {
+                    "name": "asia372",
+                    "value": "asia372"
+                },
+                {
+                    "name": "asia373",
+                    "value": "asia373"
+                }
+            ]
+        }
+    ]
+}
