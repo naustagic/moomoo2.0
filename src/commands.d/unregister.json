@@ -1,0 +1,18 @@
+{
+    "name": "unregister",
+    "name_localizations": {
+        "en-US": "unregister",
+        "pt-BR": "desregistrar",
+        "es-ES": "desregistrar",
+        "zh-CN": "注销",
+        "ko": "등록 취소"
+    },
+    "description": "Unregister your MIR4 Character",
+    "description_localizations": {
+        "en-US": "Unregister your MIR4 Character",
+        "pt-BR": "Desregistrar seu personagem no MIR4",
+        "es-ES": "Desregistrar tu personaje de MIR4",
+        "zh-CN": "注销您的MIR4角色",
+        "ko": "MIR4 캐릭터 등록 취소"
+    }
+}
