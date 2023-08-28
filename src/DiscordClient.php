@@ -31,6 +31,10 @@ class DiscordClient extends ConfigLoader
 
 	private function ready()
 	{
+		$activity = new \Discord\Parts\User\Activity($this->discord);
+		$activity->name = "MIR4";
+		$activity->type = 0;
+		$this->discord->updatePresence($activity, false, "online", false);
 		$this->bunny = new BunnyAsyncClient($this->loop, "moomoo_outbox", $this->outbox(...));
 		$this->discord->on("raw", $this->inbox(...));
 		foreach ($this->discord->guilds as $guild) $this->register_guild($guild);
