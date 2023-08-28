@@ -7,16 +7,7 @@
         "zh-CN": "注册",
         "ko": "등록"
     },
-    "description": {
-        "default": "Register or update your MIR4 Character",
-        "localization": {
-            "en-US": "Register or update your MIR4 Character",
-            "pt-BR": "Registrar ou atualizar seu personagem no MIR4",
-            "es-ES": "Registrarse o actualizar tu personaje de MIR4",
-            "zh-CN": "注册或更新您的MIR4角色",
-            "ko": "MIR4 캐릭터 등록 또는 업데이트"
-        }
-    },
+    "description": "Register or update your MIR4 Character",
     "description_localizations": {
         "en-US": "Register or update your MIR4 Character",
         "pt-BR": "Registrar ou atualizar seu personagem no MIR4",
@@ -27,15 +18,20 @@
     "options": [
         {
             "name": "name",
-            "description": {
-                "default": "Your exact MIR4 Character Name",
-                "localization": {
-                    "en-US": "Your exact MIR4 Character Name",
-                    "pt-BR": "Nome exato do seu personagem no MIR4",
-                    "es-ES": "Tu nombre exacto de personaje de MIR4",
-                    "zh-CN": "您精确的MIR4角色名称",
-                    "ko": "정확한 MIR4 캐릭터 이름"
-                }
+            "name_localizations": {
+                "en-US": "Name",
+                "pt-BR": "Nome",
+                "es-ES": "Nombre",
+                "zh-CN": "名称",
+                "ko": "이름"
+            },
+            "description": "Your exact MIR4 Character Name",
+            "description_localizations": {
+                "en-US": "Your exact MIR4 Character Name",
+                "pt-BR": "Nome exato do seu personagem no MIR4",
+                "es-ES": "Tu nombre exacto de personaje de MIR4",
+                "zh-CN": "您精确的MIR4角色名称",
+                "ko": "정확한 MIR4 캐릭터 이름"
             },
             "type": 3,
             "required": true
