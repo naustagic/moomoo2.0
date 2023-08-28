@@ -1,9 +1,9 @@
 {
     "name": "register",
     "name_localizations": {
-        "en-US": "Register",
-        "pt-BR": "Registrar",
-        "es-ES": "Registrarse",
+        "en-US": "register",
+        "pt-BR": "registrar",
+        "es-ES": "registrarse",
         "zh-CN": "注册",
         "ko": "등록"
     },
