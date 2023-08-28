@@ -39,11 +39,11 @@ class DiscordClient extends ConfigLoader
 		$this->discord->on("raw", $this->inbox(...));
 		// unregister all commands
 		foreach ($this->discord->guilds as $guild) {
-			foreach ($guild->commands as $command) $command->delete();
+			$guild->commands->clear();
 		}
 		// register all global commands
-		foreach ($this->discord->application->commands as $command) $this->discord->application->commands->delete($command);
-		foreach ($this->discord->guilds as $guild) $this->register_guild($guild);
+		$this->discord->application->commands->clear();
+		//foreach ($this->discord->guilds as $guild) $this->register_guild($guild);
 	}
 
 	private function register_guild(\Discord\Parts\Guild\Guild $guild)

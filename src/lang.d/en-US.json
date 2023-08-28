@@ -9,8 +9,8 @@
     "Lancer": "Lancer",
     "Darkist": "Darkist",
     "pilot": "Pilot",
-    "commands": {
-        "register": {
+    "commands": [
+        {
             "name": "register",
             "description": "Register or update your MIR4 Character",
             "options": [
@@ -22,17 +22,17 @@
                 }
             ]
         },
-        "unregister": {
+        {
             "name": "unregister",
             "description": "Unregister your MIR4 Character",
             "options": []
         },
-        "info": {
+        {
             "name": "info",
             "description": "Get information about your registered MIR4 Character",
             "options": []
         },
-        "search": {
+        {
             "name": "search",
             "description": "Search for a MIR4 Character",
             "options": [
@@ -44,7 +44,7 @@
                 }
             ]
         },
-        "top": {
+        {
             "name": "top",
             "description": "Get the top 10 MIR4 Characters",
             "options": [
@@ -122,10 +122,10 @@
                 }
             ]
         },
-        "help": {
+        {
             "name": "help",
             "description": "Get help with the bot",
             "options": []
         }
-    }
+    ]
 }
