@@ -17,7 +17,6 @@ class DiscordClient extends ConfigLoader
 	private $loop = null;
 	private $bunny = null;
 	private $discord = null;
-	private $guild_langs = [];
 
 	function __construct()
 	{
@@ -56,7 +55,6 @@ class DiscordClient extends ConfigLoader
 		echo ("DiscordClient::interaction()\n");
 		$interaction_array = json_decode(json_encode($interaction), true);
 		$interaction_array["bot_id"] = $this->discord->id;
-		$interaction_array["guild_lang"] = $this->guild_langs[$interaction["guild_id"]];
 		$message["t"] = "INTERACTION_CREATE";
 		$message["d"] = $interaction_array;
 		$this->bunny->publish("moomoo_inbox", $message);
@@ -66,10 +64,13 @@ class DiscordClient extends ConfigLoader
 
 	private function inbox($message, \Discord\Discord $discord)
 	{
-		print_r($message);
 		$message_array = json_decode(json_encode($message), true);
 		$message_array["d"]["bot_id"] = $discord->id;
-		if (!is_null($message->d)) $message_array["d"]["guild_lang"] = isset($this->lang[$message->d->guild->preferred_locale]) ? $message->d->guild->preferred_locale : "en-US";
+		if (!is_null($message->d)) {
+			if (!is_null($message->d->guild_id)) {
+				$message_array["d"]["use_language"] = isset($this->lang[$this->discord->guilds[$message->d->guild_id]->preferred_locale]) ? $this->discord->guilds[$message->d->guild_id]->preferred_locale : "en-US";
+			}
+		}
 		$this->bunny->publish("moomoo_inbox", $message);
 	}
 
