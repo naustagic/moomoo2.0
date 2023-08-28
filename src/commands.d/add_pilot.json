@@ -1,0 +1,40 @@
+{
+    "name": "add_pilot",
+    "name_localizations": {
+        "en-US": "add_pilot",
+        "pt-BR": "adicionar_piloto",
+        "es-ES": "agregar_piloto",
+        "zh-CN": "添加飞行员",
+        "ko": "파일럿 추가"
+    },
+    "description": "Designate a Pilot for your character",
+    "description_localizations": {
+        "en-US": "Designate a Pilot for your character",
+        "pt-BR": "Designar um Piloto para seu personagem",
+        "es-ES": "Designar un Piloto para tu personaje",
+        "zh-CN": "为您的角色指定飞行员",
+        "ko": "캐릭터에 대한 파일럿 지정"
+    },
+    "options": [
+        {
+            "name": "pilot",
+            "name_localizations": {
+                "en-US": "pilot",
+                "pt-BR": "piloto",
+                "es-ES": "piloto",
+                "zh-CN": "飞行员",
+                "ko": "파일럿"
+            },
+            "description": "The pilot to add",
+            "description_localizations": {
+                "en-US": "The pilot to add",
+                "pt-BR": "O piloto para adicionar",
+                "es-ES": "El piloto para agregar",
+                "zh-CN": "要添加的飞行员",
+                "ko": "추가 할 파일럿"
+            },
+            "type": 6,
+            "required": true
+        }
+    ]
+}
