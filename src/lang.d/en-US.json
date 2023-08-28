@@ -12,120 +12,15 @@
     "commands": [
         {
             "name": "register",
-            "description": "Register or update your MIR4 Character",
-            "options": [
-                {
-                    "name": "Exact Mir4 Character Name",
-                    "description": "It must be the exact name of your character, including spaces and special characters. you can copy and paste from the game.  It is not case sensitive. If you have multiple characters, only register your main character.",
-                    "type": 3,
-                    "required": true
-                }
-            ]
-        },
-        {
-            "name": "unregister",
-            "description": "Unregister your MIR4 Character",
-            "options": []
-        },
-        {
-            "name": "info",
-            "description": "Get information about your registered MIR4 Character",
-            "options": []
-        },
-        {
-            "name": "search",
-            "description": "Search for a MIR4 Character",
+            "description": "Register your MIR4 character",
             "options": [
                 {
                     "name": "Character Name",
-                    "description": "It must be the exact name of the character, including spaces and special characters. you can copy and paste from the game.  It is not case sensitive.",
+                    "description": "Your exact MIR4 character name, copy paste from the game!",
                     "type": 3,
                     "required": true
                 }
             ]
-        },
-        {
-            "name": "top",
-            "description": "Get the top 10 MIR4 Characters",
-            "options": [
-                {
-                    "name": "Class",
-                    "description": "Class to filter by",
-                    "type": 3,
-                    "required": false,
-                    "choices": [
-                        {
-                            "name": "Warrior",
-                            "value": "Warrior"
-                        },
-                        {
-                            "name": "Sorcerer",
-                            "value": "Sorcerer"
-                        },
-                        {
-                            "name": "Taoist",
-                            "value": "Taoist"
-                        },
-                        {
-                            "name": "Arbalist",
-                            "value": "Arbalist"
-                        },
-                        {
-                            "name": "Lancer",
-                            "value": "Lancer"
-                        },
-                        {
-                            "name": "Darkist",
-                            "value": "Darkist"
-                        }
-                    ]
-                },
-                {
-                    "name": "Server",
-                    "description": "Server to filter by",
-                    "type": 3,
-                    "required": false,
-                    "choices": [
-                        {
-                            "name": "Asia",
-                            "value": "Asia"
-                        },
-                        {
-                            "name": "Europe",
-                            "value": "Europe"
-                        },
-                        {
-                            "name": "Americas",
-                            "value": "Americas"
-                        }
-                    ]
-                },
-                {
-                    "name": "Region",
-                    "description": "Region to filter by",
-                    "type": 3,
-                    "required": false,
-                    "choices": [
-                        {
-                            "name": "Asia",
-                            "value": "Asia"
-                        },
-                        {
-                            "name": "Europe",
-                            "value": "Europe"
-                        },
-                        {
-                            "name": "Americas",
-                            "value": "Americas"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "help",
-            "description": "Get help with the bot",
-            "options": []
         }
     ]
 }
