@@ -1,15 +1,16 @@
 {
-    "clan": "Clan",
-    "clans": "Clans",
-    "server": "Server",
-    "servers": "Servers",
-    "region": "Region",
-    "regions": "Regions",
+    "Clan": "Clan",
+    "Clans": "Clans",
+    "Server": "Server",
+    "Servers": "Servers",
+    "Region": "Region",
+    "Regions": "Regions",
     "Warrior": "Warrior",
     "Sorcerer": "Sorcerer",
     "Taoist": "Taoist",
     "Arbalist": "Arbalist",
     "Lancer": "Lancer",
     "Darkist": "Darkist",
-    "pilot": "Pilot"
+    "Pilot": "Pilot",
+    "Please Wait...": "Please Wait..."
 }
