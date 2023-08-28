@@ -43,6 +43,28 @@ class DiscordClient extends ConfigLoader
 	private function register_guild($guild)
 	{
 		$this->guild_langs[$guild->id] = isset($this->lang[$guild->preferred_locale]) ? $guild->preferred_locale : "en-US";
+		$lang = $this->lang[$this->guild_langs[$guild->id]];
+		foreach ($lang["commands"] as $command) {
+			$command_config = [
+				"name" => $command["name"],
+				"description" => $command["description"],
+			];
+			if (isset($command["options"])) $command_config["options"] = $command["options"];
+			$slashcommand = new Command($this->discord, $command_config);
+			$this->discord->application->commands->save($slashcommand);
+			$this->discord->listenCommand($command["name"], $this->interaction(...));
+		}
+	}
+
+	private function interaction(Interaction $interaction, $discord)
+	{
+		$interaction = json_decode(json_encode($interaction), true);
+		$interaction["bot_id"] = $discord->id;
+		$interaction["guild_lang"] = $this->guild_langs[$interaction["guild_id"]];
+		$message["t"] = "INTERACTION_CREATE";
+		$message["d"] = $interaction;
+		$this->bunny->publish("moomoo_inbox", $message);
+		$interaction->acknowledge();
 	}
 
 	private function inbox($message, $discord)
@@ -50,6 +72,7 @@ class DiscordClient extends ConfigLoader
 		print_r($message);
 		$message = json_decode(json_encode($message), true);
 		$message["bot_id"] = $discord->id;
+		$message["guild_lang"] = $this->guild_langs[$message["guild_id"]];
 		$this->bunny->publish("moomoo_inbox", $message);
 	}
 
