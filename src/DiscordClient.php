@@ -74,12 +74,12 @@ class DiscordClient extends ConfigLoader
 		$interaction->respondWithMessage(MessageBuilder::new()->setContent("..."));
 	}
 
-	private function inbox($message, \Discord\Discord $discord)
+	private function inbox(\Discord\Parts\Channel\Message $message, \Discord\Discord $discord)
 	{
 		print_r($message);
-		$message = json_decode(json_encode($message), true);
-		$message["bot_id"] = $discord->id;
-		$message["guild_lang"] = $this->guild_langs[$message["guild_id"]];
+		$message_array = json_decode(json_encode($message), true);
+		$message_array["bot_id"] = $discord->id;
+		$message_array["guild_lang"] = $this->guild_langs[$message->guild_id];
 		$this->bunny->publish("moomoo_inbox", $message);
 	}
 
