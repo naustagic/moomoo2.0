@@ -37,7 +37,7 @@ class DiscordClient extends ConfigLoader
 		$this->discord->updatePresence($activity, false, "online", false);
 		$this->bunny = new BunnyAsyncClient($this->loop, "moomoo_outbox", $this->outbox(...));
 		$this->discord->on("raw", $this->inbox(...));
-		/* If needed to clear all slash commands:
+		// If needed to clear all slash commands:
 		$this->discord->application->commands->freshen()->done(function ($cmds) {
 			foreach ($cmds as $cmd) {
 				$this->discord->application->commands->delete($cmd);
@@ -50,8 +50,8 @@ class DiscordClient extends ConfigLoader
 				};
 			});
 		}
-		*/
-		foreach ($this->discord->guilds as $guild) $this->register_guild($guild);
+
+		//foreach ($this->discord->guilds as $guild) $this->register_guild($guild);
 	}
 
 	private function register_guild(\Discord\Parts\Guild\Guild $guild)
