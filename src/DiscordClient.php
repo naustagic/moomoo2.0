@@ -38,8 +38,8 @@ class DiscordClient extends ConfigLoader
 		$this->discord->updatePresence($activity, false, "online", false);
 		$this->bunny = new BunnyAsyncClient($this->loop, "moomoo_outbox", $this->outbox(...));
 		$this->discord->on("raw", $this->inbox(...));
-		$cmds = Async\await($this->discord->application->commands->freshen());
-		foreach ($cmds as $cmd) Async\await($this->discord->application->commands->delete($cmd));
+		//$cmds = Async\await($this->discord->application->commands->freshen());
+		//foreach ($cmds as $cmd) Async\await($this->discord->application->commands->delete($cmd));
 		foreach ($this->commands as $command) {
 			$slashcommand = new Command($this->discord, $command);
 			$this->discord->application->commands->save($slashcommand);
