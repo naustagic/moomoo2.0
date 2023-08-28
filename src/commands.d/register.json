@@ -79,6 +79,28 @@
                     "value": "no"
                 }
             ]
+        },
+        {
+            "name": "level",
+            "name_localizations": {
+                "en-US": "level",
+                "pt-BR": "nível",
+                "es-ES": "nivel",
+                "zh-CN": "水平",
+                "ko": "수평"
+            },
+            "description": "Your MIR4 Character Level",
+            "description_localizations": {
+                "en-US": "Your MIR4 Character Level",
+                "pt-BR": "Seu nível de personagem MIR4",
+                "es-ES": "Tu nivel de personaje de MIR4",
+                "zh-CN": "您的MIR4角色级别",
+                "ko": "MIR4 캐릭터 레벨"
+            },
+            "type": 4,
+            "required": false,
+            "min_value": 1,
+            "max_value": 200
         }
     ]
 }
