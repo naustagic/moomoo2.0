@@ -35,6 +35,50 @@
             },
             "type": 3,
             "required": true
+        },
+        {
+            "name": "pilot",
+            "name_localizations": {
+                "en-US": "pilot",
+                "pt-BR": "piloto",
+                "es-ES": "piloto",
+                "zh-CN": "驾驶员",
+                "ko": "파일럿"
+            },
+            "description": "Are you a pilot?",
+            "description_localizations": {
+                "en-US": "Are you a pilot?",
+                "pt-BR": "Você é um piloto?",
+                "es-ES": "¿Eres un piloto?",
+                "zh-CN": "您是驾驶员吗？",
+                "ko": "파일럿이신가요?"
+            },
+            "type": 3,
+            "required": false,
+            "choices": [
+                {
+                    "name": "Yes",
+                    "name_localizations": {
+                        "en-US": "Yes",
+                        "pt-BR": "Sim",
+                        "es-ES": "Sí",
+                        "zh-CN": "是",
+                        "ko": "예"
+                    },
+                    "value": 1
+                },
+                {
+                    "name": "No",
+                    "name_localizations": {
+                        "en-US": "No",
+                        "pt-BR": "Não",
+                        "es-ES": "No",
+                        "zh-CN": "没有",
+                        "ko": "아니"
+                    },
+                    "value": 0
+                }
+            ]
         }
     ]
 }
