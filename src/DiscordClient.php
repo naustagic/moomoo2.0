@@ -61,9 +61,9 @@ class DiscordClient extends ConfigLoader
 		$lang = $this->lang[$this->guild_langs[$guild->id]];
 		foreach ($lang["commands"] as $command) {
 			$slashcommand = new Command($this->discord, $command);
-			echo("DiscordClient::register_guild() Saving " . $slashcommand->name . "\n");
+			echo ("DiscordClient::register_guild() Saving " . $slashcommand->name . "\n");
 			$guild->commands->save($slashcommand);
-			echo("DiscordClient::register_guild() Listening for " . $slashcommand->name . "\n";
+			echo ("DiscordClient::register_guild() Listening for " . $slashcommand->name . "\n");
 			$this->discord->listenCommand($command["name"], $this->interaction(...));
 		}
 	}
