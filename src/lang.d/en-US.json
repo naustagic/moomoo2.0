@@ -12,7 +12,15 @@
     "commands": [
         {
             "name": "register",
-            "description": "Register or update your MIR4 Character"
+            "description": "Register or update your MIR4 Character",
+            "options": [
+                {
+                    "name": "Name",
+                    "description": "Your exact MIR4 Character Name",
+                    "type": 3,
+                    "required": true
+                }
+            ]
         }
     ]
 }
