@@ -3,7 +3,7 @@
 namespace RPurinton\moomoo;
 
 use React\EventLoop\Loop;
-use Discord\Discord;
+use React\Async;
 use Discord\WebSockets\Intents;
 use Discord\Builders\MessageBuilder;
 use Discord\Parts\Interactions\Interaction;
@@ -38,11 +38,8 @@ class DiscordClient extends ConfigLoader
 		$this->discord->updatePresence($activity, false, "online", false);
 		$this->bunny = new BunnyAsyncClient($this->loop, "moomoo_outbox", $this->outbox(...));
 		$this->discord->on("raw", $this->inbox(...));
-		$this->discord->application->commands->freshen()->done(function ($cmds) {
-			foreach ($cmds as $cmd) {
-				$this->discord->application->commands->delete($cmd);
-			};
-		});
+		$cmds = Async\await($this->discord->application->commands->freshen());
+		foreach ($cmds as $cmd) Async\await($this->discord->application->commands->delete($cmd));
 		foreach ($this->commands as $command) {
 			$slashcommand = new Command($this->discord, $command);
 			$this->discord->application->commands->save($slashcommand);
