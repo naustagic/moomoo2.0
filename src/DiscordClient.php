@@ -45,9 +45,9 @@ class DiscordClient extends ConfigLoader
 			};
 		});
 		foreach ($this->commands as $command) {
-			$command = new Command($this->discord, $command);
-			$this->discord->application->commands->save($command);
-			$this->discord->listenCommand($command->name, $this->interaction(...));
+			$slashcommand = new Command($this->discord, $command);
+			$this->discord->application->commands->save($slashcommand);
+			$this->discord->listenCommand($command["name"], $this->interaction(...));
 		}
 	}
 
