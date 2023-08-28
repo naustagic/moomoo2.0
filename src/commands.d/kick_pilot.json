@@ -1,0 +1,40 @@
+{
+    "name": "kick_pilot",
+    "name_localizations": {
+        "en-US": "kick_pilot",
+        "pt-BR": "expulsar_piloto",
+        "es-ES": "expulsar_piloto",
+        "zh-CN": "踢飞行员",
+        "ko": "파일럿추방"
+    },
+    "description": "Remove a Pilot from your character",
+    "description_localizations": {
+        "en-US": "Remove a Pilot from your character",
+        "pt-BR": "Remover um Piloto do seu personagem",
+        "es-ES": "Eliminar un Piloto de tu personaje",
+        "zh-CN": "从您的角色中删除飞行员",
+        "ko": "캐릭터에서 파일럿 제거"
+    },
+    "options": [
+        {
+            "name": "pilot",
+            "name_localizations": {
+                "en-US": "pilot",
+                "pt-BR": "piloto",
+                "es-ES": "piloto",
+                "zh-CN": "飞行员",
+                "ko": "파일럿"
+            },
+            "description": "The pilot to remove",
+            "description_localizations": {
+                "en-US": "The pilot to remove",
+                "pt-BR": "O piloto para remover",
+                "es-ES": "El piloto para eliminar",
+                "zh-CN": "要删除的飞行员",
+                "ko": "제거 할 파일럿"
+            },
+            "type": 6,
+            "required": true
+        }
+    ]
+}
