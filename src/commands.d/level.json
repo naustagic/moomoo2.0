@@ -1,0 +1,42 @@
+{
+    "name": "level",
+    "description": "Update your MIR4 Character Level",
+    "name_localizations": {
+        "en-US": "level",
+        "pt-BR": "nível",
+        "es-ES": "nivel",
+        "zh-CN": "水平",
+        "ko": "수평"
+    },
+    "description_localizations": {
+        "en-US": "Update your MIR4 Character Level",
+        "pt-BR": "Atualize seu nível de personagem MIR4",
+        "es-ES": "Actualiza tu nivel de personaje de MIR4",
+        "zh-CN": "更新您的MIR4角色级别",
+        "ko": "MIR4 캐릭터 레벨 업데이트"
+    },
+    "options": [
+        {
+            "name": "level",
+            "name_localizations": {
+                "en-US": "level",
+                "pt-BR": "nível",
+                "es-ES": "nivel",
+                "zh-CN": "水平",
+                "ko": "수평"
+            },
+            "description": "Your MIR4 Character Level",
+            "description_localizations": {
+                "en-US": "Your MIR4 Character Level",
+                "pt-BR": "Seu nível de personagem MIR4",
+                "es-ES": "Tu nivel de personaje de MIR4",
+                "zh-CN": "您的MIR4角色级别",
+                "ko": "MIR4 캐릭터 레벨"
+            },
+            "type": 4,
+            "required": true,
+            "min_value": 1,
+            "max_value": 200
+        }
+    ]
+}
