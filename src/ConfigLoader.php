@@ -8,6 +8,7 @@ class ConfigLoader
 {
 	public $config = null;
 	public $lang = null;
+	public $commands = null;
 
 	function __construct()
 	{
@@ -22,6 +23,12 @@ class ConfigLoader
 			$section = substr($configfile, 0, strpos($configfile, ".json"));
 			$section = substr($section, strpos($section, "lang.d/") + 7);
 			$this->lang[$section] = json_decode(file_get_contents($configfile), true);
+		}
+		exec("ls " . __DIR__ . "/commands.d/*.json", $configfiles);
+		foreach ($configfiles as $configfile) {
+			$section = substr($configfile, 0, strpos($configfile, ".json"));
+			$section = substr($section, strpos($section, "commands.d/") + 11);
+			$this->commands[$section] = json_decode(file_get_contents($configfile), true);
 		}
 	}
 }
