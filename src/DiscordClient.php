@@ -79,7 +79,7 @@ class DiscordClient extends ConfigLoader
 		print_r($message);
 		$message_array = json_decode(json_encode($message), true);
 		$message_array["d"]["bot_id"] = $discord->id;
-		$message_array["d"]["guild_lang"] = $this->guild_langs[$message->d->guild_id];
+		if (!is_null($message->d)) $message_array["d"]["guild_lang"] = $this->guild_langs[$message->d->guild_id];
 		$this->bunny->publish("moomoo_inbox", $message);
 	}
 
