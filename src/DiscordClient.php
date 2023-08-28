@@ -24,11 +24,13 @@ class DiscordClient extends ConfigLoader
 	private function ready()
 	{
 		$this->bunny = new BunnyAsyncClient($this->loop, "moomoo_outbox", $this->outbox(...));
+		foreach ($this->discord->guilds as $guild) print_r($guild);
 		$this->discord->on("raw", $this->inbox(...));
 	}
 
 	private function inbox($message, $discord)
 	{
+		print_r($message);
 		$message["bot_id"] = $discord->id;
 		$this->bunny->publish("moomoo_inbox", $message);
 	}
