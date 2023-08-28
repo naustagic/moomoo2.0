@@ -37,6 +37,12 @@ class DiscordClient extends ConfigLoader
 		$this->discord->updatePresence($activity, false, "online", false);
 		$this->bunny = new BunnyAsyncClient($this->loop, "moomoo_outbox", $this->outbox(...));
 		$this->discord->on("raw", $this->inbox(...));
+		// unregister all commands
+		foreach ($this->discord->guilds as $guild) {
+			foreach ($guild->commands as $command) $command->delete();
+		}
+		// register all global commands
+		foreach ($this->discord->application->commands as $command) $this->discord->application->commands->delete($command);
 		foreach ($this->discord->guilds as $guild) $this->register_guild($guild);
 	}
 
