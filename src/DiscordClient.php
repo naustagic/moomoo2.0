@@ -17,6 +17,7 @@ class DiscordClient extends ConfigLoader
 	private $loop = null;
 	private $bunny = null;
 	private $discord = null;
+	private $guild_langs = [];
 
 	function __construct()
 	{
@@ -37,8 +38,7 @@ class DiscordClient extends ConfigLoader
 
 	private function register_guild($guild)
 	{
-		$guild_language = $guild->preferred_locale;
-		$lang = isset($this->lang[$guild_language]) ? $this->lang[$guild_language] : $this->lang["en-US"];
+		$this->guild_langs[$guild->id] = isset($this->lang[$guild->preferred_locale]) ? $guild->preferred_locale : "en-US";
 	}
 
 	private function inbox($message, $discord)
