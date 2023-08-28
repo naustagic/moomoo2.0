@@ -68,11 +68,11 @@ class DiscordClient extends ConfigLoader
 		}
 	}
 
-	private function interaction(\Discord\Parts\Interactions\Interaction $interaction, \Discord\Discord $discord)
+	private function interaction(\Discord\Parts\Interactions\Interaction $interaction)
 	{
 		echo ("DiscordClient::interaction()\n" . print_r($interaction, true) . "\n");
 		$interaction_array = json_decode(json_encode($interaction), true);
-		$interaction_array["bot_id"] = $discord->id;
+		$interaction_array["bot_id"] = $this->discord->id;
 		$interaction_array["guild_lang"] = $this->guild_langs[$interaction["guild_id"]];
 		$message["t"] = "INTERACTION_CREATE";
 		$message["d"] = $interaction_array;
